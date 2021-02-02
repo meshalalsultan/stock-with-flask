@@ -1,0 +1,11 @@
+In this flask app i try to make :
+IN Browser app 
+
+i will try to make small app that can predict the stock price from givin 
+stock name
+start date 
+end date
+
+So i will need :
+1- Home Page to GET the info i need 
+2- Predict stock by innertxt in the brawser

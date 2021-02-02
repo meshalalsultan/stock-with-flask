@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>
+        This is the Home Page
+    </h1>
+    <div>
+        <h2>
+            I will play with some code hear
+        </h2>
+        <span>
+            <div>
+                <a href={{ url_for('temp') }}>Back</a>
+            </div>
+            <center>
+
+            
+            <div>
+                <form action="http://127.0.0.1:5000/only" method="POST">
+                <br>
+                <label for="stockName"><b> Stock Name</b> </label>
+                <input type="text" name="stockName" id="stock" placeholder="Enter Stock Name">
+                <div><br>
+                    <label for="startDate"><b>Start Date</b></label>
+                    <input required type="date" name="startDate" id="start">
+                    <br>
+                    <br>
+                    <label for="endDate"><b>End Date</b></label>
+                    <input required type="date" name="endDate" id="end">
+                    <br>
+                    <br>
+                    <input required type="submit" value="Submit">
+                    <br>
+                    <br>
+                    </form>
+                    <br>
+                    The Stock Name is {{ stock }}
+                    <br>
+                    The Start Date is {{ start_date }}
+                    <br>
+                    The End Date is {{ end_date }}
+                    <br>
+                    <br>
+                    <b>
+                        {{profile}}
+                    </b>
+
+
+                </center>  
+
+
+                </div>
+            </div>
+        </span>
+
+</body>
+</html>
