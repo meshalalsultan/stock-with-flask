@@ -6,17 +6,18 @@
     <title>Home</title>
 </head>
 <body>
+    <div>
+        <a href={{ url_for('temp') }}>Back</a>
+    </div>
     <h1>
-        This is the Home Page
+        This is the Pred Page
     </h1>
     <div>
         <h2>
             I will play with some code hear
         </h2>
         <span>
-            <div>
-                <a href={{ url_for('temp') }}>Back</a>
-            </div>
+
             <center>
 
             
@@ -30,9 +31,11 @@
                     The End Date is {{ end_date }}
                     <br>
                     <br>
-                    <b>
+                    
                         {{profile}}
-                    </b>
+                    
+                    <br><br>
+                    <h1>The Predicted Price for {{stock}} is <b>{{pred_price}}</b></h1>
 
 
                 </center>  
