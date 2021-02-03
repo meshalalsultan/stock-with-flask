@@ -41,10 +41,14 @@ print(type(start_date))
 print('------------------------')
 
 df.drop('Currency',axis=1,inplace=True)
-'''
+
 
 from tensorflow.keras.models import load_model
 
 model = load_model('model.h5')
 
 print('ok')
+'''
+c = 'kuwait'
+data = investpy.get_stock_historical_data(stock='zain', country=c, from_date='01/01/2010', to_date='01/01/2019')
+print(data.head())

@@ -37,6 +37,7 @@ def temp():
     stock = request.form.get('stockName')
     start_date = request.form.get('startDate')
     end_date = request.form.get('endDate')
+    country = request.form.get('countryName')
 
 
 
@@ -49,20 +50,20 @@ def only():
     stock = request.form.get('stockName').upper()
     start = request.form.get('startDate')
     end = request.form.get('endDate')
-
+    country = request.form.get('countryName')
     model = load_model('model.h5')
 
 
     start_date = datetime.strptime(start, "%Y-%m-%d").strftime("%d/%m/%Y")
     end_date = datetime.strptime(end, "%Y-%m-%d").strftime("%d/%m/%Y")
-    df = investpy.get_stock_historical_data(stock=stock, country='United States', from_date=start_date, to_date=end_date)
+    df = investpy.get_stock_historical_data(stock=stock, country=country, from_date=start_date, to_date=end_date)
     df.drop('Currency',axis=1,inplace=True)
     data = df.filter(['Close'])
     dataset = data.values
     scaler = MinMaxScaler(feature_range =(0,1))
     scaled_data = scaler.fit_transform(dataset)
 
-    df = investpy.get_stock_historical_data(stock=stock, country='United States', from_date=start_date, to_date=end_date)
+    df = investpy.get_stock_historical_data(stock=stock, country=country, from_date=start_date, to_date=end_date)
     df.drop('Currency' ,axis=1,inplace=True)
     pred_data = df.filter(['Close'])
 
@@ -78,7 +79,7 @@ def only():
     pred_price = scaler.inverse_transform(pred_price)
     print(pred_price)
 
-    com_profile = investpy.get_stock_company_profile(stock=stock, country='United States', language='english')
+    com_profile = investpy.get_stock_company_profile(stock=stock, country=country, language='english')
     profile = com_profile['desc']
 
 
